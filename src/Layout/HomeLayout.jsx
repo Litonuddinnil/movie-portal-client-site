@@ -18,7 +18,8 @@ const HomeLayout = () => {
             <main>
                 {/* Featured Movies */}
               <section>
-                <h1 className='text-3xl font-bold '>Featured Movies</h1>
+                <h1 className=' ml-2 text-4xl font-bold  text-gray-800 '>Featured Movies</h1>
+                
                 <FeaturedMovie></FeaturedMovie>
                 </section>  
             </main>
