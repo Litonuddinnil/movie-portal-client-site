@@ -21,7 +21,7 @@ const FeaturedMovie = () => {
 
   return (
     <div className="p-6 max-w-7xl mx-auto space-y-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {featuredMovies.map((movie) => (
           <div key={movie._id} className="card w-full bg-base-100 shadow-xl p-4 rounded-lg">
             <figure>

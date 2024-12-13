@@ -1,11 +1,15 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
 import StarRatings from "react-star-ratings";
 
 const AllMovies = () => {
   const allMovies = useLoaderData();
-  console.log(allMovies);
+  const navigate = useNavigate();
+  const handleMovieClick = (_id)=>{
+  navigate(`/movies/${_id}`)
+  }
+//   console.log(allMovies);
   return (
     <div>
       <div>
@@ -50,6 +54,14 @@ const AllMovies = () => {
                     />
                   </span>
                 </p>
+                <div className="card-actions justify-end">
+                <button
+                  className="btn btn-primary"
+                  onClick={()=>handleMovieClick(movie._id)}
+                >
+                  See Details
+                </button>
+              </div>
                  
               </div>
             </div>

@@ -9,11 +9,13 @@ import PrivateRoutes from './PrivateRoutes';
  
 import MovieDetails from '../Components/Pages/MovieDetails';
 import AllMovies from '../Components/Pages/AllMovies';
+import Favorite from '../Components/Pages/Favorite';
 
 const routes = createBrowserRouter([
     {
       path: "/",
-      element:<HomeLayout></HomeLayout>
+      element:<HomeLayout></HomeLayout>,
+      loader: ()=>fetch(`http://localhost:5000/movies`)
     },
     {
       path:"/movies",
@@ -31,6 +33,12 @@ const routes = createBrowserRouter([
       path:"/add-movie",
       element:<PrivateRoutes>
         <AdMovies></AdMovies>
+      </PrivateRoutes>
+    },
+    {
+      path:"/favorites",
+      element:<PrivateRoutes>
+        <Favorite></Favorite>
       </PrivateRoutes>
     },
     {

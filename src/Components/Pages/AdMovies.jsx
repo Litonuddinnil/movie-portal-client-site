@@ -15,7 +15,7 @@ const AddMovie = () => {
   const [rating, setRating] = useState(0);
   const [email, setEmail] = useState(''); // You can retrieve this from context or session
 
-  const genres = ["Comedy", "Thriller", "Horror", "Action", "Sci-Fi"];
+  const genres = ["Thriller", "Horror", "Action", "Sci-Fi"];
   const years = [2024, 2023, 2022, 2021, 2020];
   const navigate = useNavigate();
 
@@ -60,15 +60,11 @@ const AddMovie = () => {
       errors.duration = 'Duration cannot be empty';
     } else if (parseInt(duration) <= 60) {
       errors.duration = 'Duration must be greater than 60 minutes';
-    }
-
-    // If there are any errors, set the error state and return early
+    } 
     if (errors.title || errors.poster || errors.duration || errors.details) {
       setError(errors);
       return;
-    }
-
-    // If no errors, proceed with form submission
+    } 
     const newMovies = {
       poster,
       title,
@@ -77,7 +73,7 @@ const AddMovie = () => {
       releaseYear,
       movieRating,
       details,
-      email, // Add email to the movie data
+      email,  
     };
     console.log(newMovies);
 
