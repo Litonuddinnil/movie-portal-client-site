@@ -26,7 +26,7 @@ const MovieDetails = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://movie-portal-server-site-three.vercel.app/movies/${_id}`, {
+        fetch(`http://localhost:5000/movies/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -78,7 +78,7 @@ const MovieDetails = () => {
     };
 
     // Send the data to the backend
-    fetch("https://movie-portal-server-site-three.vercel.app/favorites", {
+    fetch("http://localhost:5000/favorites", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -156,7 +156,7 @@ const MovieDetails = () => {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex space-x-4">
+          <div className="flex flex-col md:flex-row gap-4">
             <button
               onClick={() => handlerDelete(_id)}
               className="btn btn-error text-white"

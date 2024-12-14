@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
-import { FaBars, FaMoon, FaSun, FaTimes } from "react-icons/fa"; // FontAwesome for Hamburger icon
-
+import { FaBars, FaMoon, FaSun, FaTimes } from "react-icons/fa";  
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,7 +51,7 @@ const Navbar = () => {
       <div className="flex-1 p-4">
         <Link to="/" className="text-2xl font-bold text-primary">
           <img
-            className="w-24 h-20 bg-red-300 rounded-full"
+            className="w-20 md:w-24 h-20 md:h-24 bg-red-300 rounded-full"
             src="https://i.ibb.co.com/6bRJ4fk/eclipse.webp"
             alt="Logo"
           />
@@ -64,7 +63,7 @@ const Navbar = () => {
       </div>
 
       <div className={`lg:hidden ${isMenuOpen ? "block" : "hidden"}`}>
-        <ul className="menu menu-compact space-y-2 p-4 bg-white shadow-md rounded-lg">
+        <ul className="menu menu-compact space-y-2 p-4  shadow-md rounded-lg">
           {links}
         </ul>
       </div>
@@ -94,7 +93,7 @@ const Navbar = () => {
                   className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-gray-700 rounded-box w-52"
                 >
                   <li>
-                    <span className="font-bold text-gray-300">
+                    <span className="font-bold ">
                       {user.displayName || "User"}
                     </span>
                   </li>

@@ -9,7 +9,7 @@ import Navbar from "../Navbar";
 const  UpdateMovie = () => {
   const [duration, setDuration] = useState('');
   const {_id, poster, title,genre,releaseYear,movieRating,details } = useLoaderData();
-  console.log(_id)
+//   console.log(_id)
   const [error, setError] = useState({
     title: '',
     poster: '',
@@ -79,7 +79,7 @@ const  UpdateMovie = () => {
       details,
       email,  
     };
-    console.log(newMovies);
+    // console.log(newMovies);
 
     fetch(`https://movie-portal-server-site-three.vercel.app/movies/${_id}`, {
       method: "PUT",
@@ -90,7 +90,7 @@ const  UpdateMovie = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        // console.log(data);
 
         if (data.modifiedCount) {
           Swal.fire({
@@ -105,7 +105,7 @@ const  UpdateMovie = () => {
         }
       })
       .catch(error => {
-        console.log(error.message)
+        // console.log(error.message)
         Swal.fire({
           title: "Error!",
           text: "There was an issue  Updating the movie.",

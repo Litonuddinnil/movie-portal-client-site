@@ -53,7 +53,7 @@ const SignIn = () => {
     const handlerGoogleLogIn = ()=>{
         logInGoogle()
         .then(result=>{
-            console.log(result.user);
+            // console.log(result.user);
             navigate(location?.state ? location.state : "/");
             toast.success("Login successful!");
         })
