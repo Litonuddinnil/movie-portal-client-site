@@ -38,8 +38,8 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/gift" className="hover:text-primary">
-           Gift Cards
+        <NavLink to="/faq" className="hover:text-primary">
+           FAQ
         </NavLink>
       </li>
     </>

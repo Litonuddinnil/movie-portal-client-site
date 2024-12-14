@@ -5,13 +5,13 @@ import SignUp from '../Components/Pages/SignUp';
 import SignIn from '../Components/Pages/SignIn';
 import ErrorPage from '../Components/Pages/ErrorPage';
 import AdMovies from '../Components/Pages/AdMovies';
-import PrivateRoutes from './PrivateRoutes';
- 
+import PrivateRoutes from './PrivateRoutes'; 
 import MovieDetails from '../Components/Pages/MovieDetails';
 import AllMovies from '../Components/Pages/AllMovies';
-import Favorite from '../Components/Pages/Favorite';
-import GiftCards from '../Components/Pages/GiftCards';
+import Favorite from '../Components/Pages/Favorite'; 
 import Contact from '../Components/Pages/Contact';
+import FAQSection from '../Components/Pages/FAQSection ';
+import UpdateMovie from '../Components/Pages/UpdateMovie';
 
 const routes = createBrowserRouter([
     {
@@ -38,15 +38,20 @@ const routes = createBrowserRouter([
       </PrivateRoutes>
     },
     {
+      path:"/updateMovie/:id",
+      element:<UpdateMovie></UpdateMovie>,
+      loader: ({params})=>fetch(`http://localhost:5000/movies/${params.id}`)
+    },
+    {
       path:"/favorites",
       element:<PrivateRoutes>
         <Favorite></Favorite>
       </PrivateRoutes>
     },
     {
-      path:"/gift",
-      element:
-       <GiftCards></GiftCards> 
+      path:"/faq",
+      element:<FAQSection></FAQSection>
+       
     },
     {
         path:"/register",

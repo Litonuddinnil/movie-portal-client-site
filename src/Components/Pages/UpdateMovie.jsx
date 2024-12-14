@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { Toaster } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 import StarRatings from "react-star-ratings";
 import Swal from "sweetalert2";
 import Navbar from "../Navbar";
 
-const AddMovie = () => {
+const  UpdateMovie = () => {
   const [duration, setDuration] = useState('');
+  const {_id, poster, title,genre,releaseYear,movieRating,details } = useLoaderData();
+  console.log(_id)
   const [error, setError] = useState({
     title: '',
     poster: '',
@@ -21,7 +23,7 @@ const AddMovie = () => {
   const years = [2025,2024, 2023, 2022, 2021, 2020];
   const navigate = useNavigate();
 
-  const handleAddMovies = (e) => {
+  const handleUpdateMovies = (e) => {
     e.preventDefault();
     const form = e.target;
     const poster = form.poster.value;
@@ -79,8 +81,8 @@ const AddMovie = () => {
     };
     console.log(newMovies);
 
-    fetch('http://localhost:5000/movies', {
-      method: "POST",
+    fetch(`http://localhost:5000/movies/${_id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -90,10 +92,10 @@ const AddMovie = () => {
       .then(data => {
         console.log(data);
 
-        if (data.insertedId) {
+        if (data.modifiedCount) {
           Swal.fire({
             title: "Success!",
-            text: "Movie Added Successfully!",
+            text: "Movie  Updated Successfully!",
             icon: "success",
           });
           form.reset();
@@ -106,7 +108,7 @@ const AddMovie = () => {
         console.log(error.message)
         Swal.fire({
           title: "Error!",
-          text: "There was an issue adding the movie.",
+          text: "There was an issue  Updating the movie.",
           icon: "error",
         });
       });
@@ -123,13 +125,13 @@ const AddMovie = () => {
     </div>
     <div className="p-6 max-w-2xl mx-auto bg-white shadow-lg rounded-lg">
       <h2 className=" text-3xl font-semibold mb-6 text-center">
-        <Typewriter words={['Add Movies']}
+        <Typewriter words={[' Update Movies']}
             loop={1} 
             typeSpeed={70}
             deleteSpeed={50}
             delaySpeed={1000}></Typewriter>
       </h2>
-      <form onSubmit={handleAddMovies} className="space-y-6">
+      <form onSubmit={handleUpdateMovies} className="space-y-6">
         {/* Movie Poster */}
         <div className="form-control">
           <label className="label">
@@ -139,7 +141,7 @@ const AddMovie = () => {
             type="text"
             name="poster"
             className="input input-bordered w-full"
-            placeholder="Enter image link"
+            defaultValue={poster}
           />
           {error.poster && <p className="text-red-400">{error.poster}</p>}
         </div>
@@ -153,7 +155,7 @@ const AddMovie = () => {
             type="text"
             name="title"
             className="input input-bordered w-full"
-            placeholder="Enter movie title"
+            defaultValue={title}
           />
           {error.title && <p className="text-red-400">{error.title}</p>}
         </div>
@@ -164,7 +166,7 @@ const AddMovie = () => {
             <span className="label-text font-medium">Genre</span>
           </label>
           <select name="genre" className="select select-bordered w-full">
-            <option value="" disabled>
+            <option defaultValue={genre} disabled>
               Select genre
             </option>
             {genres.map((genre) => (
@@ -184,11 +186,11 @@ const AddMovie = () => {
           </label>
           <input
             type="number"
-            name="duration"
+            name="duration" 
             value={duration}
             onChange={handleChange}
             className="input input-bordered w-full"
-            placeholder="Enter duration"
+            
           />
           {error.duration && <p className="text-red-400">{error.duration}</p>}
         </div>
@@ -199,7 +201,7 @@ const AddMovie = () => {
             <span className="label-text font-medium">Release Year</span>
           </label>
           <select name="releaseYear" className="select select-bordered w-full">
-            <option value="" disabled>
+            <option defaultValue={releaseYear} disabled>
               Select release year
             </option>
             {years.map((year) => (
@@ -218,6 +220,7 @@ const AddMovie = () => {
           <div className="flex">
             <StarRatings
               rating={rating}
+              defaultValue={movieRating}
               starRatedColor="gold"
               changeRating={(newRating) => setRating(newRating)}
               numberOfStars={5}
@@ -234,14 +237,14 @@ const AddMovie = () => {
           <textarea
             name="summary"
             className="textarea textarea-bordered w-full"
-            placeholder="Enter movie summary"
+             defaultValue={details}
           ></textarea>
           {error.details && <p className="text-red-400">{error.details}</p>}
         </div>
 
         {/* Submit Button */}
         <button type="submit" className="btn btn-primary w-full">
-          Add Movie
+           Update Movie
         </button>
       </form>
       <Toaster />
@@ -250,4 +253,4 @@ const AddMovie = () => {
   );
 };
 
-export default AddMovie;
+export default  UpdateMovie;

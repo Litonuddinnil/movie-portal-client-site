@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import Navbar from "../Navbar";
 import Swal from "sweetalert2";
@@ -12,6 +12,7 @@ const MovieDetails = () => {
   const {user} = useContext(AuthContext);
   const [movies, setMovies] = useState([movieData]);  
   const { _id, poster, title, duration, genre, movieRating, releaseYear, details } = movieData;
+  
 
   // Handle Movie Deletion
   const handlerDelete = (_id) => {
@@ -118,8 +119,7 @@ const MovieDetails = () => {
         console.error("Error adding to favorites:", error);
         navigate("/favorites");
       });
-  };
-
+  }; 
   return (
     <div> 
       <Navbar />
@@ -169,6 +169,12 @@ const MovieDetails = () => {
             >
               Add to Favorite
             </button>
+            <Link
+              to={`/updateMovie/${_id}`}
+              className="btn btn-primary text-white"
+            >
+              Update Movie
+            </Link>
           </div>
         </div>
       </div>
