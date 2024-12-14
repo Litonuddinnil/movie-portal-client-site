@@ -3,6 +3,7 @@ import Navbar from "../Components/Navbar";
 import Banner from "../Components/Banner";
 import FeaturedMovie from "../Components/FeaturedMovie";
 import { useLoaderData } from "react-router-dom";
+import UpComingMovies from "../Components/Pages/UpComingMovies";
 
 const HomeLayout = () => {
   const moviesAll = useLoaderData(); // Fetch movies from loader
@@ -25,10 +26,14 @@ const HomeLayout = () => {
       <main>
         {/* Featured Movies Section */}
         <section>
-          <h1 className="ml-2 text-4xl font-bold text-gray-800">
-            Featured Movies
-          </h1>
+          
           <FeaturedMovie />
+        </section>
+        <section>
+          <h1 className="ml-2 text-4xl font-bold text-gray-800">
+            UpComing  Movies
+          </h1>
+          <UpComingMovies></UpComingMovies>
         </section>
       </main>
       <footer></footer>

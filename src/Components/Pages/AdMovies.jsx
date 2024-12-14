@@ -41,7 +41,7 @@ const AddMovie = () => {
       errors.title = 'Title cannot be empty';
     }
 
-    // Validate Summary (cannot be empty, must be at least 10 characters)
+    // Validate Summary  
     if (!details) {
       errors.details = 'Summary cannot be empty';
     } else if (details.length < 10) {
@@ -50,7 +50,7 @@ const AddMovie = () => {
 
     // Validate Poster Link (must be a valid URL)
     try {
-      new URL(poster); // Validate poster URL
+      new URL(poster);  
     } catch (e) {
       errors.poster = 'Poster link must be a valid URL';
     }
