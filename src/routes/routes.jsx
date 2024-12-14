@@ -10,6 +10,7 @@ import PrivateRoutes from './PrivateRoutes';
 import MovieDetails from '../Components/Pages/MovieDetails';
 import AllMovies from '../Components/Pages/AllMovies';
 import Favorite from '../Components/Pages/Favorite';
+import GiftCards from '../Components/Pages/GiftCards';
 
 const routes = createBrowserRouter([
     {
@@ -40,6 +41,11 @@ const routes = createBrowserRouter([
       element:<PrivateRoutes>
         <Favorite></Favorite>
       </PrivateRoutes>
+    },
+    {
+      path:"/gift",
+      element:
+       <GiftCards></GiftCards> 
     },
     {
         path:"/register",

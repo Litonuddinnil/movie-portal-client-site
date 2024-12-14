@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
 import StarRatings from "react-star-ratings";
+import { Typewriter } from "react-simple-typewriter";
 
 const AllMovies = () => {
   const allMovies = useLoaderData();
@@ -16,9 +17,13 @@ const AllMovies = () => {
         <Navbar></Navbar>
       </div>
       <div className="p-6 max-w-7xl mx-auto space-y-8">
-        <h2 className="text-4xl font-bold text-center text-gray-800">
-          All Movies
-        </h2>
+        <h2 className=" text-3xl font-semibold mb-6 text-center">
+               <Typewriter words={['All Movies']}
+                   loop={1} 
+                   typeSpeed={70}
+                   deleteSpeed={50}
+                   delaySpeed={1000}></Typewriter>
+             </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {allMovies.map((movie) => (
             <div

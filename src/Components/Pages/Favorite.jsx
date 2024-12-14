@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../provider/AuthProvider";
 import Navbar from "../Navbar";
+import { Typewriter } from "react-simple-typewriter";
 
 const Favorite = () => {
   const {user} = useContext(AuthContext);
@@ -48,6 +49,13 @@ const Favorite = () => {
     <div>
         <Navbar></Navbar>
     </div>
+       <h2 className=" text-3xl font-semibold mb-6 text-center">
+              <Typewriter words={['Favorite Movies']}
+                  loop={1} 
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}></Typewriter>
+            </h2>
     <div className="p-6  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         
         {favoriteMovies.map((movie) => (

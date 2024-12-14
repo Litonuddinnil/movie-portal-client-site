@@ -30,8 +30,8 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/extras" className="hover:text-primary">
-          Extra Route
+        <NavLink to="/gift" className="hover:text-primary">
+           Gift Cards
         </NavLink>
       </li>
     </>
@@ -41,11 +41,11 @@ const Navbar = () => {
 
   return (
     <nav className="navbar shadow-sm px-4">
-      <div className="flex-1">
+      <div className="flex-1 p-4">
         <Link to="/" className="text-2xl font-bold text-primary">
           <img
-            className="w-12 h-12 bg-red-300 rounded-full"
-            src="https://i.ibb.co.com/vkjr5m7/movies-icons.png"
+            className="w-24 h-20 bg-red-300 rounded-full"
+            src="https://i.ibb.co.com/6bRJ4fk/eclipse.webp"
             alt="Logo"
           />
         </Link>
