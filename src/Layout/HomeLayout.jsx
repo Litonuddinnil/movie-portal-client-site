@@ -6,6 +6,7 @@ import { useLoaderData } from "react-router-dom";
 import UpComingMovies from "../Components/Pages/UpComingMovies";
 import { Typewriter } from "react-simple-typewriter";
 import Footer from "../Components/Footer";
+import PemiemMovies from "../Components/Pages/PemiemMovies";
 
 const HomeLayout = () => {
   const moviesAll = useLoaderData();
@@ -41,6 +42,9 @@ const HomeLayout = () => {
             ></Typewriter>
           </h2>
           <UpComingMovies></UpComingMovies>
+        </section> 
+        <section>
+          <PemiemMovies></PemiemMovies>
         </section>
       </main>
       <footer>
