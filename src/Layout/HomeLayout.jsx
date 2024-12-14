@@ -32,7 +32,7 @@ const HomeLayout = () => {
           <FeaturedMovie />
         </section>
         <section >
-          <h2 className=" text-3xl font-semibold mb-6  ">
+          <h2 className=" text-3xl font-semibold mb-6 md:ml-16  ">
             <Typewriter
               words={["Upcoming Movies (2025)"]}
               loop={Infinity}

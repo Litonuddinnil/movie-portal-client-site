@@ -125,7 +125,7 @@ const Navbar = () => {
       )}
       <button
           onClick={toggleTheme}
-          className="btn btn-error flex items-center gap-2"
+          className="btn btn-error flex items-center ml-2"
         >
           {theme === "winter" ? <FaMoon /> : <FaSun />} 
         </button>
