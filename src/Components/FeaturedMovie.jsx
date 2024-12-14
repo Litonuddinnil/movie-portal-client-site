@@ -26,7 +26,7 @@ const FeaturedMovie = () => {
       .catch((error) => console.error("Error fetching featured movies:", error));
   }, []); 
   const handleMovieClick = (id) => {
-    navigate(`/movies/${id}`);
+    navigate(`/movie/${id}`);
   };
 
   return (

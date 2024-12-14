@@ -8,7 +8,7 @@ const AllMovies = () => {
   const allMovies = useLoaderData();
   const navigate = useNavigate();
   const handleMovieClick = (_id)=>{
-  navigate(`/movies/${_id}`)
+  navigate(`/movie/${_id}`)
   }
 //   console.log(allMovies);
   return (

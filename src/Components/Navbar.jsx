@@ -23,7 +23,7 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/movies" className="hover:text-primary">
+        <NavLink exact={true} to="/movies" className="hover:text-primary">
           All Movies
         </NavLink>
       </li>

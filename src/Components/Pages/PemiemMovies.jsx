@@ -70,6 +70,12 @@ const PremiumMovies = () => {
             <p className="text-lg text-gray-600 font-semibold mb-4">
               ReleaseYear: {movie.releaseYear}
             </p> 
+            <p className="text-gray-600">No Ads</p>
+            <div className="divider"></div>
+            <p className="text-gray-600">Direct Movie Linking</p>
+            <div className="divider"></div>
+            <p className="text-gray-600">Unlimited space</p>
+            <div className="divider"></div>
             <p className="text-sm text-gray-600 mb-6">{movie.description}</p> 
             <button className="btn btn-primary w-full text-sm">
               Buy Now

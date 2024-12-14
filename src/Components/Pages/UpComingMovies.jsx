@@ -16,7 +16,7 @@ const FeaturedMovie = () => {
   }, []);
 
   const handleMovieClick = (id) => { 
-    navigate(`/movies/${id}`);
+    navigate(`/movie/${id}`);
   };
 
   return (

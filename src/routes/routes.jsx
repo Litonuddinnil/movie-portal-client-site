@@ -25,7 +25,7 @@ const routes = createBrowserRouter([
       loader:()=>fetch('http://localhost:5000/movies')
     },
     {
-      path:"/movies/:id",
+      path:"/movie/:id",
       element:
       <PrivateRoutes><MovieDetails></MovieDetails></PrivateRoutes>,
       loader: ({params})=>fetch(`http://localhost:5000/movies/${params.id}`)
