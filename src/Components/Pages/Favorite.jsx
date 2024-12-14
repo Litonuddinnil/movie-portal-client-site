@@ -10,7 +10,7 @@ const Favorite = () => {
  
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/favorites?email=${user.email}`)
+      fetch(`https://movie-portal-server-site-three.vercel.app/favorites?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => setFavoriteMovies(data));
     }
@@ -28,7 +28,7 @@ const Favorite = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/favorites/${movieId}`, {
+        fetch(`https://movie-portal-server-site-three.vercel.app/favorites/${movieId}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

@@ -10,7 +10,7 @@ const FeaturedMovie = () => {
  
   const fetchMoviesByGenre = async (genre) => {
     try {
-      const response = await fetch(`http://localhost:5000/movies/genre/${genre}`); // Call backend with the genre
+      const response = await fetch(`https://movie-portal-server-site-three.vercel.app/movies/genre/${genre}`); // Call backend with the genre
       const data = await response.json();
       setFeaturedMovies(data); // Update state with movies fetched by genre
     } catch (error) {
@@ -20,7 +20,7 @@ const FeaturedMovie = () => {
 
   useEffect(() => {
     // Fetch default featured movies
-    fetch("http://localhost:5000/movies/moviesLimit")
+    fetch("https://movie-portal-server-site-three.vercel.app/movies/moviesLimit")
       .then((res) => res.json())
       .then((data) => setFeaturedMovies(data))
       .catch((error) => console.error("Error fetching featured movies:", error));

@@ -9,7 +9,7 @@ const FeaturedMovie = () => {
 
   useEffect(() => {
     
-    fetch('http://localhost:5000/movies/moviesYear')
+    fetch('https://movie-portal-server-site-three.vercel.app/movies/moviesYear')
       .then((res) => res.json())
       .then((data) => setUpComingMovies(data))
       .catch((error) => console.error('Error fetching featured movies:', error));

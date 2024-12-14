@@ -17,18 +17,18 @@ const routes = createBrowserRouter([
     {
       path: "/",
       element:<HomeLayout></HomeLayout>,
-      loader: ()=>fetch(`http://localhost:5000/movies`)
+      loader: ()=>fetch(`https://movie-portal-server-site-three.vercel.app/movies`)
     },
     {
       path:"/movies",
       element:<AllMovies></AllMovies>,
-      loader:()=>fetch('http://localhost:5000/movies')
+      loader:()=>fetch('https://movie-portal-server-site-three.vercel.app/movies')
     },
     {
       path:"/movie/:id",
       element:
       <PrivateRoutes><MovieDetails></MovieDetails></PrivateRoutes>,
-      loader: ({params})=>fetch(`http://localhost:5000/movies/${params.id}`)
+      loader: ({params})=>fetch(`https://movie-portal-server-site-three.vercel.app/movies/${params.id}`)
     },
     
     {
@@ -40,7 +40,7 @@ const routes = createBrowserRouter([
     {
       path:"/updateMovie/:id",
       element:<PrivateRoutes><UpdateMovie></UpdateMovie></PrivateRoutes>,
-      loader: ({params})=>fetch(`http://localhost:5000/movies/${params.id}`)
+      loader: ({params})=>fetch(`https://movie-portal-server-site-three.vercel.app/movies/${params.id}`)
     },
     {
       path:"/favorites",

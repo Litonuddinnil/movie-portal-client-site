@@ -37,7 +37,7 @@ const AddMovie = () => {
       email: "user@example.com", 
     };
 
-    fetch("http://localhost:5000/movies", {
+    fetch("https://movie-portal-server-site-three.vercel.app/movies", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

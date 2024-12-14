@@ -26,7 +26,7 @@ const MovieDetails = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/movies/${_id}`, {
+        fetch(`https://movie-portal-server-site-three.vercel.app/movies/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -78,7 +78,7 @@ const MovieDetails = () => {
     };
 
     // Send the data to the backend
-    fetch("http://localhost:5000/favorites", {
+    fetch("https://movie-portal-server-site-three.vercel.app/favorites", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
