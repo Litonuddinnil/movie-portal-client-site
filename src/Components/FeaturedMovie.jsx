@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 import StarRatings from "react-star-ratings";
 
 const FeaturedMovie = () => {
@@ -30,8 +31,16 @@ const FeaturedMovie = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-between">
-        <h1 className="ml-2 text-4xl font-bold ">Featured Movies</h1>
+      <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+        <h2 className=" text-3xl font-semibold mb-6  ">
+                   <Typewriter
+                     words={["Featured Movies"]}
+                     loop={1}
+                     typeSpeed={70}
+                     deleteSpeed={50}
+                     delaySpeed={1000}
+                   ></Typewriter>
+                 </h2>
         <div className="form-control w-80 mr-4">
           <label className="flex items-center gap-2">
             <span className="label-text font-medium">Genre</span>
