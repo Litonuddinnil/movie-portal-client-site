@@ -11,6 +11,7 @@ import MovieDetails from '../Components/Pages/MovieDetails';
 import AllMovies from '../Components/Pages/AllMovies';
 import Favorite from '../Components/Pages/Favorite';
 import GiftCards from '../Components/Pages/GiftCards';
+import Contact from '../Components/Pages/Contact';
 
 const routes = createBrowserRouter([
     {
@@ -54,6 +55,10 @@ const routes = createBrowserRouter([
     {
         path:"/login",
         element:<SignIn></SignIn>
+    },
+    {
+      path:"/contact",
+      element:<Contact></Contact>
     },
     {
         path:"*",

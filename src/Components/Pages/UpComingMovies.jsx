@@ -32,7 +32,7 @@ const FeaturedMovie = () => {
               <p className="text-md font-bold text-red-400">{movie?.genre}</p>
               {/* <p className="text-sm text-gray-500">Duration: {movie?.duration} mins</p> */}
               {/* <p className="text-sm text-gray-500">Release Year: {movie?.releaseYear}</p> */}
-              <p className="text-black font-bold text-sm">Rating: 
+              <p className="font-bold text-sm">Rating: 
                  <span className='text-sm'>
                  <StarRatings
               rating={movie?.movieRating}

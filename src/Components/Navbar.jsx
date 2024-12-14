@@ -1,11 +1,19 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
-import { FaBars, FaTimes } from "react-icons/fa"; // FontAwesome for Hamburger icon
+import { FaBars, FaMoon, FaSun, FaTimes } from "react-icons/fa"; // FontAwesome for Hamburger icon
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [theme, setTheme] = useState("winter");
+
+  const toggleTheme = () => {
+    const newTheme = theme === "winter" ? "black" : "winter";
+    setTheme(newTheme);
+    document.documentElement.setAttribute("data-theme", newTheme);
+     
+  };
 
   const links = (
     <>
@@ -91,6 +99,7 @@ const Navbar = () => {
                     </span>
                   </li>
                 </ul>
+                
               </div>
             </>
           ) : (
@@ -114,6 +123,12 @@ const Navbar = () => {
           </button>
         </div>
       )}
+      <button
+          onClick={toggleTheme}
+          className="btn btn-error flex items-center gap-2"
+        >
+          {theme === "winter" ? <FaMoon /> : <FaSun />} 
+        </button>
     </nav>
   );
 };

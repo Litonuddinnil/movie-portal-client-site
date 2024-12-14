@@ -4,6 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
- 
   
+[data-theme="black"] {
+    background-color: black;
+    color: white;
+  }
+  
+  [data-theme="winter"] {
+    background-color: white;
+    color: black;
+  }
   

@@ -48,7 +48,7 @@ const AllMovies = () => {
                 <p className="text-sm text-gray-500">
                   Release Year: {movie?.releaseYear}
                 </p>
-                <p className="text-black font-bold text-sm">
+                <p className="font-bold text-sm">
                   Rating:
                   <span className="text-sm">
                     <StarRatings

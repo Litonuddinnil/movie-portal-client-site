@@ -133,16 +133,16 @@ const MovieDetails = () => {
         {/* Movie Details */}
         <div className="col-span-5">
           <h1 className="text-4xl font-bold mb-4">{title}</h1>
-          <p className="text-gray-600 mb-2">
+          <p className=" text-black mb-2">
             <strong>Genre:</strong> {genre}
           </p>
-          <p className="text-gray-600 mb-2">
+          <p className=" text-black mb-2">
             <strong>Release Year:</strong> {releaseYear}
           </p>
-          <p className="text-gray-600 mb-2">
+          <p className=" text-black mb-2">
             <strong>Duration:</strong> {duration} minutes
           </p>
-          <p className="text-gray-600 mb-4">{details}</p>
+          <p className=" text-black mb-4">{details}</p>
 
           {/* Movie Rating */}
           <div className="mb-4">

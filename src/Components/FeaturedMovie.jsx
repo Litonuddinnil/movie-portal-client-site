@@ -31,7 +31,7 @@ const FeaturedMovie = () => {
   return (
     <div>
       <div className="flex items-center justify-between">
-        <h1 className="ml-2 text-4xl font-bold text-gray-800">Featured Movies</h1>
+        <h1 className="ml-2 text-4xl font-bold ">Featured Movies</h1>
         <div className="form-control w-80 mr-4">
           <label className="flex items-center gap-2">
             <span className="label-text font-medium">Genre</span>
@@ -73,14 +73,14 @@ const FeaturedMovie = () => {
                   <h3 className="card-title text-xl font-semibold">
                     {movie?.title}
                   </h3>
-                  <p className="text-sm text-gray-500">{movie?.genre}</p>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm  ">{movie?.genre}</p>
+                  <p className="text-sm  ">
                     Duration: {movie?.duration} mins
                   </p>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm  ">
                     Release Year: {movie?.releaseYear}
                   </p>
-                  <p className="text-black font-bold text-sm">
+                  <p className=" font-bold text-sm">
                     Rating:
                     <span className="text-sm">
                       <StarRatings
