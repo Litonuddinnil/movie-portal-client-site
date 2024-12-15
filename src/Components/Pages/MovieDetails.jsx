@@ -78,7 +78,7 @@ const MovieDetails = () => {
     };
 
     // Send the data to the backend
-    fetch("http://localhost:5000/favorites", {
+    fetch("https://movie-portal-f2acb.web.app/favorites", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
