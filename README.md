@@ -82,6 +82,8 @@ We welcome contributions to Eclipse Movie! Whether it's fixing bugs, adding new 
 5. Open a pull request.
 
 ---
+  <h2>📸 Screenshot</h2>
+  <img src="https://github.com/Litonuddinnil/movie-portal-client-site/blob/main/Screenshot%202025-02-05%20154421.png">
 
 ## 📧 Contact
 For any inquiries or suggestions, feel free to reach out:
